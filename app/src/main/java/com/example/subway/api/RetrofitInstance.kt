@@ -8,7 +8,7 @@ object RetrofitInstance {
 
     val api: SubwayApi by lazy {
         Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl("http://swopenAPI.seoul.go.kr/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(SubwayApi::class.java)

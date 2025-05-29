@@ -10,5 +10,5 @@ interface SubwayApi {
     suspend fun getArrivalInfo(
         @Path("stationName") stationName: String,
         @Path("apiKey") apiKey: String = "654d784e55726c6138346873737853"
-    ): Response<SubwayResponse>
+    ): Response<SubwayResponse> // ✅ suspend 함수로 변경됨
 }
