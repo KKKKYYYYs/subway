@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             if (stationName.isNotEmpty()) {
                 viewModel.fetchSubwayInfo(stationName, if (lineFilter.isEmpty()) null else lineFilter)
             } else {
-                resultTextView.text = "역 이름을 입력해주세요."
+                resultTextView.text = "역 이름을 입력해주세요. "
             }
         }
 
