@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity() {
         })
 
             // ⚠️ case 3: 아무것도 입력 안 됐을 때
-            resultTextView.text = "출발역/도착역 또는 호선 중 하나 이상 입력해주세요."
+            resultTextView.text = "출발역/도착역 또는 호선 중 하나 이상 입력해주세요. "
         }
     }
 
