@@ -7,11 +7,20 @@
     android:padding="16dp">
 
     <EditText
+        android:id="@+id/searchText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="검색"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
         android:id="@+id/stationEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="지하철 역 이름"
-        app:layout_constraintTop_toTopOf="parent"
+        android:hint="출발역"
+        app:layout_constraintTop_toBottomOf="@id/searchText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -19,17 +28,28 @@
         android:id="@+id/lineEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="호선 (선택사항)"
+        android:hint="도착역"
         app:layout_constraintTop_toBottomOf="@id/stationEditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/lineText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="호선"
+        app:layout_constraintTop_toBottomOf="@id/lineEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
 
     <Button
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="조회"
-        app:layout_constraintTop_toBottomOf="@id/lineEditText"
+        app:layout_constraintTop_toBottomOf="@+id/lineText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
