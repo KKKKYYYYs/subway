@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+    <!-- 입력 영역 -->
     <EditText
         android:id="@+id/searchText"
         android:layout_width="0dp"
@@ -13,7 +14,7 @@
         android:hint="검색"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/stationEditText"
@@ -22,7 +23,7 @@
         android:hint="출발역"
         app:layout_constraintTop_toBottomOf="@id/searchText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/lineEditText"
@@ -31,7 +32,7 @@
         android:hint="도착역"
         app:layout_constraintTop_toBottomOf="@id/stationEditText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/lineText"
@@ -40,28 +41,35 @@
         android:hint="호선"
         app:layout_constraintTop_toBottomOf="@id/lineEditText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="조회"
-        app:layout_constraintTop_toBottomOf="@+id/lineText"
+        app:layout_constraintTop_toBottomOf="@id/lineText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/resultTextView"
+    <!-- 결과 출력 영역을 ScrollView로 감쌈 -->
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:textSize="16sp"
-        android:scrollbars="vertical"
-        android:padding="8dp"
+        android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/searchButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:text="결과가 여기에 출력됩니다." />
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
