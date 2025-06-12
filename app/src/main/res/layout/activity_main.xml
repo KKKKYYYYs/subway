@@ -1,75 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
-
-    <!-- 입력 영역 -->
-    <EditText
-        android:id="@+id/searchText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="검색"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/stationEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="출발역"
-        app:layout_constraintTop_toBottomOf="@id/searchText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/lineEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="도착역"
-        app:layout_constraintTop_toBottomOf="@id/stationEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/lineText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="호선"
-        app:layout_constraintTop_toBottomOf="@id/lineEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:background="@drawable/wlgkcjf"
+    android:gravity="center">
 
     <Button
-        android:id="@+id/searchButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/infoButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="조회"
-        app:layout_constraintTop_toBottomOf="@id/lineText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:text="정보조회" />
 
-    <!-- 결과 출력 영역을 ScrollView로 감쌈 -->
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/searchButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+    <Button
+        android:id="@+id/pathButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="경로조회"
+        android:layout_marginTop="16dp" />
 
-        <TextView
-            android:id="@+id/resultTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:padding="8dp"
-            android:text="결과가 여기에 출력됩니다." />
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/lineButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="호선조회" />
+</LinearLayout>
