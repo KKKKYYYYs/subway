@@ -16,9 +16,9 @@ class InfoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_info)
 
         val searchEditText = findViewById<EditText>(R.id.searchEditText)
-
         val searchButton = findViewById<Button>(R.id.searchButton)
         val resultTextView = findViewById<TextView>(R.id.resultTextView)
+        val refreshButton = findViewById<Button>(R.id.refreshButton)
 
         searchButton.setOnClickListener {
             val stationName = searchEditText.text.toString().trim()
@@ -28,6 +28,16 @@ class InfoActivity : AppCompatActivity() {
                 viewModel.fetchSubwayInfo(stationName, null)
             } else {
                 resultTextView.text = "🔍 역 이름을 입력해주세요."
+            }
+        }
+        refreshButton.setOnClickListener {
+            val stationName = searchEditText.text.toString().trim()
+             // 필요 시 사용
+
+            if (stationName.isNotEmpty()) {
+                viewModel.fetchSubwayInfo(stationName, null)
+            } else {
+                resultTextView.text = "🔁 새로고침하려면 먼저 역 이름을 입력해주세요."
             }
         }
 
